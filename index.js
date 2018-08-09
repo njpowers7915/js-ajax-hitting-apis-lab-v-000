@@ -44,5 +44,5 @@ function displayBranches(){
   const branches = JSON.parse(this.responseText)
   console.log(branches)
   const branchesList = `<ul>${branches.map(branch => branch.name).join('')}</ul>`
-  document.getElementById("commits").innerHTML = branchesList
+  document.getElementById("details").innerHTML = branchesList
 }
