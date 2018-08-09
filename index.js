@@ -15,7 +15,7 @@ function displayRepositories(event, data) {
   document.getElementById("repositories").innerHTML = repoList
 }
 
-function getCommits(el) {
+function getCommits(username) {
   const name = el.dataset.repository
   const req = new XMLHttpRequest()
   const username = document.getElementById("username").value
@@ -28,7 +28,7 @@ function displayCommits(){
   const commits = JSON.parse(this.responseText)
   const username = document.getElementById("username").value
   console.log(commits)
-  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + 'username' + '</strong> - ' + commit.commit.author.name + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' +  + '</strong> - ' + commit.commit.author.name + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
   document.getElementById("details").innerHTML = commitsList
 }
 
